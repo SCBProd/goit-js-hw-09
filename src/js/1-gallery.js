@@ -52,17 +52,24 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery')
+const galleryContainer = document.querySelector(".gallery");
+
+const galleryItemsMarkup = images
+  .map(({ preview, original, description }) => {
+    return `
+      <li>
+        <a href="${original}">
+          <img src="${preview}" alt="${description}" />
+        </a>
+      </li>
+    `;
+  })
+  .join("");
 
 
+galleryContainer.innerHTML = galleryItemsMarkup;
 
-
-const markup = images.map(image => `
-     <a class="gallery__item" href="${image.original}">
-      <img src="${image.preview}" alt="${image.description}" />
-    </a>
-  `).join('')
-gallery.innerHTML = markup;
-  
-const lightbox = new SimpleLightbox('.gallery a', { captions: true, captionsData: 'alt', captionDelay: 250, });
-
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
