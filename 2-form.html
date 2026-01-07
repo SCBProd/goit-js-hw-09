@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feedback Form</title>
   <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/styles-B5PQgOOF.css">
 </head>
-
 <body>
   <main>
-    <a class="back-link" href="./index.html">Go back</a>
     <h1>Feedback Form</h1>
 
-    <form class="feedback-form" id="feedback-form" autocomplete="off">
+    <form class="feedback-form" autocomplete="off">
       <label>
         Email
-        <input type="email" name="email" id="email" autofocus />
+        <input type="email" name="email" autofocus />
       </label>
       <br>
       <label>
         Message
-        <textarea name="message" id="message" rows="8"></textarea>
+        <textarea name="message" rows="8"></textarea>
       </label>
       <br>
-      <button type="submit" id="submit-btn">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </main>
 
-  <!-- Підключення JS після всього HTML -->
   <script src="./js/2-form.js"></script>
 </body>
-
 </html>
