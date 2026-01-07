@@ -1,12 +1,12 @@
-// 1️⃣ Глобальний об’єкт formData
+
 const formData = { email: "", message: "" };
 
-// 2️⃣ Вибір елементів через class і name
+
 const form = document.querySelector(".feedback-form");
 const emailInput = form.querySelector('input[name="email"]');
 const messageInput = form.querySelector('textarea[name="message"]');
 
-// 3️⃣ Відновлення стану з localStorage
+
 const savedData = localStorage.getItem("feedback-form-state");
 if (savedData) {
     const parsedData = JSON.parse(savedData);
@@ -16,7 +16,6 @@ if (savedData) {
     messageInput.value = formData.message;
 }
 
-// 4️⃣ Делегування події input
 form.addEventListener("input", (e) => {
     const target = e.target;
 
@@ -29,7 +28,6 @@ form.addEventListener("input", (e) => {
     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
 });
 
-// 5️⃣ Обробка відправки форми
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
