@@ -53,23 +53,13 @@ const images = [
 ];
 
 const galleryContainer = document.querySelector(".gallery");
-
-const galleryItemsMarkup = images
-  .map(({ preview, original, description }) => {
-    return `
-      <li>
-        <a href="${original}">
-          <img src="${preview}" alt="${description}" />
-        </a>
-      </li>
-    `;
-  })
-  .join("");
+galleryContainer.innerHTML = images.map(({preview, original, description}) => `
+  <li>
+    <a href="${original}">
+      <img src="${preview}" alt="${description}" />
+    </a>
+  </li>
+`).join("");
 
 
-galleryContainer.innerHTML = galleryItemsMarkup;
-
-const lightbox = new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
-  captionDelay: 250,
-});
+new SimpleLightbox(".gallery a", { captionsData: "alt", captionDelay: 250 });
